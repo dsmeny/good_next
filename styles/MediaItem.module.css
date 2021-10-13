@@ -1,0 +1,13 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.details {
+  color: white;
+  margin-top: 1rem;
+  line-height: 1rem;
+}
+
+.details h2 {
+  color: var(--overhang-color);
+}
