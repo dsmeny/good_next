@@ -9,18 +9,16 @@ const Movies = () => {
   const router = useRouter();
   const [media] = useFetchApi(router.pathname);
 
-  function postMediaData() {
-    fetch("/media/setMovieData", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: media,
-    });
-  }
-
   useEffect(() => {
-    postMediaData();
+    (function postMediaData() {
+      fetch("/media/setMovieData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(media),
+      });
+    })();
   }, [media]);
 
   return (

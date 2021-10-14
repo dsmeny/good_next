@@ -6,14 +6,14 @@ function ItemPage() {
   const title = useRouter().query.title;
 
   function getMediaData() {
-    fetch("/api/media/setMovieData")
+    fetch("/api/media/getMovieData")
       .then((response) => response.json())
       .then((data) => console.log(data));
   }
 
   useEffect(() => {
     getMediaData();
-  }, []);
+  }, [title]);
 
   const classes = {
     container: {
