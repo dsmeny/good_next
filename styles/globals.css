@@ -28,3 +28,10 @@ a {
 h1 {
   font-weight: 600;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

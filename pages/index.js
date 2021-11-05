@@ -17,7 +17,7 @@ export default function Index() {
         setState("");
         inputRef.current.value = "";
         inputRef.current.focus();
-      }, 1000);
+      }, 1500);
     }
   }, [state]);
 
