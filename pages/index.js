@@ -1,11 +1,25 @@
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Home from "./home";
-import styles from "../styles/Home.module.css";
 
 export default function Index() {
-  return (
-    <div className={styles.container}>
-      <Home />
-    </div>
-  );
+  const [state, setState] = useState("");
+
+  const inputRef = useRef();
+
+  function stateHandler(e) {
+    setState(e);
+  }
+
+  useEffect(() => {
+    if (state === null) {
+      setTimeout(() => {
+        setState("");
+        inputRef.current.value = "";
+        inputRef.current.focus();
+      }, 1000);
+    }
+  }, [state]);
+
+  return <Home state={state} inputRef={inputRef} stateHandler={stateHandler} />;
 }

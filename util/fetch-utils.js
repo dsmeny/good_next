@@ -1,6 +1,4 @@
-export const postData = (e, inputRef, setState, type) => {
-  e.preventDefault();
-
+export const postData = (inputRef, stateHandler, type) => {
   const inputFieldValue = inputRef.current.value;
 
   fetch("/api/api_routes", {
@@ -15,13 +13,6 @@ export const postData = (e, inputRef, setState, type) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      setState(JSON.stringify(data.data));
+      !data.data ? stateHandler(null) : stateHandler(JSON.stringify(data.data));
     });
-};
-
-export const closeNotify = (setState, inputRef) => {
-  setTimeout(() => {
-    setState("");
-    inputRef.current.value = "";
-  }, 500);
 };

@@ -1,44 +1,36 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Media from "../../components/Media";
-import { postData, closeNotify } from "../../util/fetch-utils";
+import { postData } from "../../util/fetch-utils";
+import styles from "./Home.module.css";
+import Notify from "../../components/Notify";
 
-const Home = () => {
-  const [state, setState] = useState("");
-  const inputRef = useRef();
-
-  const styles = {
-    color: "white",
-    transform: "translateY(3rem)",
-    fontSize: "1rem",
-  };
+const Home = (props) => {
+  useEffect(() => {
+    props.inputRef.current.focus();
+  }, []);
 
   return (
-    <div>
-      <h3 style={{ color: "white" }}>Find what&apos;s good!</h3>
+    <div className={styles.container}>
+      <h3>Find what&apos;s good!</h3>
       <form
         id="form2"
         method="GET"
         onSubmit={(e) => {
-          postData(e, inputRef, setState, "t");
+          e.preventDefault();
+          postData(props.inputRef, props.stateHandler, "t");
         }}
       >
-        <input type="text" id="search" ref={inputRef} />
+        <input type="text" id="search" ref={props.inputRef} />
         <button>Submit</button>
       </form>
-      {state === null && (
-        <p
-          style={styles}
-          onMouseOver={() => {
-            closeNotify(setState, inputRef);
-          }}
-          onTouchStart={() => {
-            closeNotify(setState, inputRef);
-          }}
-        >
-          Sorry we don&apos;t seem to have a match for that search.
-        </p>
+
+      {props.state === null && <Notify />}
+
+      {props.state && props.state !== null && (
+        <section>
+          {props.state && <Media data={props.state} type={"t"} />}
+        </section>
       )}
-      <section>{state && <Media data={state} type={"t"} />}</section>
     </div>
   );
 };

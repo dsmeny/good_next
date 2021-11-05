@@ -1,0 +1,23 @@
+.container {
+  height: 100vh;
+}
+.container h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.container input {
+  border-radius: 10rem;
+  line-height: 2.5rem;
+  width: 39vw;
+  margin-right: 7px;
+}
+
+.container button {
+  border-radius: 10rem;
+  line-height: 2.5rem;
+  width: 15vw;
+  font-weight: 500;
+  background-color: antiquewhite;
+  margin-bottom: 2rem;
+}
