@@ -1,6 +1,4 @@
-export const postData = (inputRef, stateHandler, type) => {
-  const inputFieldValue = inputRef.current.value;
-
+export const postData = (inputFieldValue, stateHandler, type) => {
   fetch("/api/api_routes", {
     method: "post",
     headers: {

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import Media from "../../components/Media";
 import { postData } from "../../util/fetch-utils";
 import styles from "./Home.module.css";
@@ -14,10 +14,11 @@ const Home = (props) => {
       <h1>What&apos;s good ??</h1>
       <form
         id="form2"
-        method="GET"
         onSubmit={(e) => {
           e.preventDefault();
-          postData(props.inputRef, props.stateHandler, "t");
+
+          const inputFieldValue = props.inputRef.current.value;
+          postData(inputFieldValue, props.stateHandler, "t");
         }}
       >
         <input type="text" id="search" ref={props.inputRef} />
