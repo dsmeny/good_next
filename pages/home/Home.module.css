@@ -17,5 +17,11 @@
   width: 7vw;
   font-weight: 500;
   background-color: antiquewhite;
-  margin-bottom: 2rem;
+}
+
+.home form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
