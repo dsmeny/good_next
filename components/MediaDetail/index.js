@@ -12,27 +12,29 @@ const MediaDetail = (props) => {
   };
 
   return (
-    <div className={classes.container}>
-      <img src={data.Poster} alt={data.Title} className={classes.poster} />
-      <div className={classes.details}>
-        <div className={classes.title}>
-          <strong style={styles}>Title: </strong>
-          <h2>{data.Title}</h2>
+    <div>
+      <section>
+        <img src={data.Poster} alt={data.Title} className={classes.poster} />
+        <div className={classes.details}>
+          <div className={classes.title}>
+            <strong style={styles}>Title: </strong>
+            <h2>{data.Title}</h2>
+          </div>
+          <p>
+            <strong style={styles}>Release Date: </strong> {data.Released}
+          </p>
+          <p>
+            <strong style={styles}>Actors: </strong> {data.Actors}
+          </p>
+          <p>
+            <strong style={styles}>Plot: </strong> {data.Plot}
+          </p>
+          <p>
+            <strong style={styles}>Runtime: </strong>
+            {data.Runtime}
+          </p>
         </div>
-        <p>
-          <strong style={styles}>Release Date: </strong> {data.Released}
-        </p>
-        <p>
-          <strong style={styles}>Actors: </strong> {data.Actors}
-        </p>
-        <p>
-          <strong style={styles}>Plot: </strong> {data.Plot}
-        </p>
-        <p>
-          <strong style={styles}>Runtime: </strong>
-          {data.Runtime}
-        </p>
-      </div>
+      </section>
     </div>
   );
 };
