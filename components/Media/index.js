@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import classes from "./Media.module.css";
-import Details from "../icons/details";
+import Details from "../icons/Details";
 
 const Media = (props) => {
   let data = JSON.parse(props.data);
