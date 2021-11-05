@@ -1,15 +1,7 @@
 .container {
   height: 100vh;
 }
-
 .container h1 {
   color: white;
   margin-bottom: 1rem;
 }
-
-/* @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-} */

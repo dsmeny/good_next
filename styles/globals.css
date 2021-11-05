@@ -4,6 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: var(--main-bg-color);
 }
 
 a {
@@ -15,14 +16,6 @@ a {
   box-sizing: border-box;
   font-family: "Titillium Web", sans-serif;
 }
-
-/* 
-  #2d3436 Onyx
-  #8d86c9 Middle Blue Purple
-  #cac4ce Lavender Gray
-  #f7ece1 Linen
-  #d1d6646 Maximum Green Yellow
-*/
 
 :root {
   --main-bg-color: #2d3436;

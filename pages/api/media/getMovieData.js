@@ -1,9 +1,0 @@
-const Redis = require("ioredis");
-
-const redis = new Redis(process.env.REDIS_URL);
-
-export default async function handler(req, res) {
-  const mediaStore = await redis.get("media");
-
-  res.status(200).send({ success: true, mediaStore });
-}

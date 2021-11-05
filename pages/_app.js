@@ -1,7 +1,7 @@
 import Head from "next/head";
-
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import "../styles/globals.css";
+import { MediaContextProvider } from "../util/state/mediaContext";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +10,9 @@ function MyApp({ Component, pageProps }) {
         <title>Good2Watch</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Component {...pageProps} />
+      <MediaContextProvider>
+        <Component {...pageProps} />
+      </MediaContextProvider>
     </Layout>
   );
 }

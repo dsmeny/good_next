@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Nav from "../Nav";
 import styles from "./Layout.module.css";
 const Layout = (props) => {
   return (
