@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import "../styles/globals.css";
-import { MediaContextProvider } from "../util/state/mediaContext";
+import { MediaContextProvider } from "../util/state/mediaContext.js";
 
 function MyApp({ Component, pageProps }) {
   return (

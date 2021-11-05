@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import MediaContext from "../../util/state/mediaContext";
+import MediaContext from "../../util/state/mediaContext.js";
 import useFetchApi from "../../util/hooks/useFetchApi";
 import Media from "../../components/Media";
 import classes from "./Good.module.css";
