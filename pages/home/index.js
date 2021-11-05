@@ -1,25 +1,16 @@
 import { useEffect } from "react";
 import Media from "../../components/Media";
-import { postData } from "../../util/fetch-utils";
 import styles from "./Home.module.css";
 import Notify from "../../components/Notify";
+import postHandler from "../../util/fetch-utils";
 
 const Home = (props) => {
-  useEffect(() => {
-    props.inputRef.current.focus();
-  }, []);
-
   return (
     <div className={styles.home}>
       <h1>What&apos;s good ??</h1>
       <form
         id="form2"
-        onSubmit={(e) => {
-          e.preventDefault();
-
-          const inputFieldValue = props.inputRef.current.value;
-          postData(inputFieldValue, props.stateHandler, "t");
-        }}
+        onSubmit={(e) => postHandler(e, props.inputRef, props.postApi)}
       >
         <input type="text" id="search" ref={props.inputRef} />
         <button>Submit</button>

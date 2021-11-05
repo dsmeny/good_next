@@ -1,4 +1,5 @@
-export const postData = (inputFieldValue, stateHandler, type) => {
+export const postData = (inputFieldValue, setState, type) => {
+  console.log("fetch-util: ", inputFieldValue, setState, type);
   fetch("/api/api_routes", {
     method: "post",
     headers: {
@@ -11,6 +12,15 @@ export const postData = (inputFieldValue, stateHandler, type) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      !data.data ? stateHandler(null) : stateHandler(JSON.stringify(data.data));
+      !data.data ? setState(null) : setState(JSON.stringify(data.data));
     });
 };
+
+function postHandler(e, inputRef, postApi) {
+  e.preventDefault();
+
+  const inputFieldValue = inputRef.current.value;
+  postApi(inputFieldValue);
+}
+
+export default postHandler;

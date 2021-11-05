@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { postData } from "../util/fetch-utils";
 import Head from "next/head";
 import Home from "./home";
 
@@ -7,8 +8,8 @@ export default function Index() {
 
   const inputRef = useRef();
 
-  function stateHandler(e) {
-    setState(e);
+  function stateHandler(inputFieldValue) {
+    postData(inputFieldValue, setState, "t");
   }
 
   useEffect(() => {
@@ -21,5 +22,5 @@ export default function Index() {
     }
   }, [state]);
 
-  return <Home state={state} inputRef={inputRef} stateHandler={stateHandler} />;
+  return <Home state={state} inputRef={inputRef} postApi={stateHandler} />;
 }
