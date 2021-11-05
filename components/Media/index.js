@@ -18,11 +18,37 @@ const Media = (props) => {
         onClick={() => router.push(`/${Title}?type=${props.type}`)}
       />
       <div className={classes.details}>
-        <h2>{data.Title}</h2>
-        <p>{data.Released}</p>
-        <p>{data.Actors}</p>
-        <p>{data.Plot}</p>
-        <p>{data.Runtime}</p>
+        <h2
+          className={classes.marginBtm}
+          onClick={() => router.push(`/${Title}?type=${props.type}`)}
+        >
+          {data.Title}
+        </h2>
+        <div className={classes.marginBtm}>
+          <p className={classes.label}>Starring</p>
+          <p>{data.Actors}</p>
+        </div>
+        <div>
+          <p className={classes.label}>Plot</p>
+          <p className={classes.plot}>{data.Plot}</p>
+        </div>
+        <div className={classes.meta}>
+          <div>
+            <p className={classes.label}>Date</p>
+            <p>{data.Released}</p>
+          </div>
+          <div>
+            <p className={classes.label}>Duration</p>
+            <p>{data.Runtime}</p>
+          </div>
+          <div>
+            <p className={classes.label}>ImdbRating</p>
+            <p>{data.imdbRating}</p>
+          </div>
+        </div>
+        <p onClick={() => router.push(`/${Title}?type=${props.type}`)}>
+          Full description &gt; &gt;
+        </p>
       </div>
     </div>
   );

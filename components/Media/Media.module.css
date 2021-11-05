@@ -3,18 +3,39 @@
 }
 
 .details {
-  color: white;
+  color: rgb(219, 219, 183);
   margin-top: 1rem;
   line-height: 1rem;
   padding: 0 1 rem;
+  text-align: left;
+}
+
+.marginBtm {
+  margin-bottom: 2rem;
+}
+
+.plot {
+  line-height: 1.5rem;
 }
 
 .details h2 {
   color: var(--overhang-color);
+  text-align: center;
 }
 
 .container img {
   width: 100%;
   max-width: 350px;
   height: auto;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.label {
+  color: #cac4ce;
 }

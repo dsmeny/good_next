@@ -4,6 +4,8 @@ import classes from "./Media.module.css";
 const MediaDetail = (props) => {
   const data = JSON.parse(props.data);
 
+  const router = useRouter();
+
   const Title = data.Title.toLowerCase();
 
   const styles = {
@@ -14,11 +16,16 @@ const MediaDetail = (props) => {
   return (
     <div>
       <section>
-        <img src={data.Poster} alt={data.Title} className={classes.poster} />
+        <img
+          src={data.Poster}
+          alt={data.Title}
+          className={classes.poster}
+          onClick={() => router.back()}
+        />
         <div className={classes.details}>
           <div className={classes.title}>
             <strong style={styles}>Title: </strong>
-            <h2>{data.Title}</h2>
+            <h2 onClick={() => router.back()}>{data.Title}</h2>
           </div>
           <p>
             <strong style={styles}>Release Date: </strong> {data.Released}
