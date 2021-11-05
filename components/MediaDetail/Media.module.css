@@ -5,6 +5,10 @@
   margin: 0 auto;
 }
 
+.poster {
+  margin-right: 1rem;
+}
+
 .details {
   color: white;
   margin-top: 1rem;
@@ -12,15 +16,15 @@
   text-align: left;
 }
 
-.details h2 {
-  color: var(--overhang-color);
-}
-
 .title {
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: center;
-  width: 4.5rem;
+  width: 53.5 rem;
+}
+
+.title h2 {
+  color: var(--overhang-color);
 }
 
 .details p {

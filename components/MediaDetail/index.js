@@ -13,7 +13,7 @@ const MediaDetail = (props) => {
 
   return (
     <div className={classes.container}>
-      <img src={data.Poster} alt={data.Title} />
+      <img src={data.Poster} alt={data.Title} className={classes.poster} />
       <div className={classes.details}>
         <div className={classes.title}>
           <strong style={styles}>Title: </strong>
