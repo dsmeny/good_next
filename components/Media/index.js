@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import classes from "./Media.module.css";
+import Details from "../icons/details";
 
 const Media = (props) => {
   let data = JSON.parse(props.data);
@@ -18,12 +19,20 @@ const Media = (props) => {
         onClick={() => router.push(`/${Title}?type=${props.type}`)}
       />
       <div className={classes.details}>
-        <h2
-          className={classes.marginBtm}
-          onClick={() => router.push(`/${Title}?type=${props.type}`)}
-        >
-          {data.Title}
-        </h2>
+        <div className={classes.titles}>
+          <h2
+            className={classes.marginBtm}
+            onClick={() => router.push(`/${Title}?type=${props.type}`)}
+          >
+            {data.Title}
+          </h2>
+          <p
+            className={classes.icon}
+            onClick={() => router.push(`/${Title}?type=${props.type}`)}
+          >
+            <Details />
+          </p>
+        </div>
         <div className={classes.marginBtm}>
           <p className={classes.label}>Starring</p>
           <p>{data.Actors}</p>
@@ -46,9 +55,6 @@ const Media = (props) => {
             <p>{data.imdbRating}</p>
           </div>
         </div>
-        <p onClick={() => router.push(`/${Title}?type=${props.type}`)}>
-          Full description &gt; &gt;
-        </p>
       </div>
     </div>
   );

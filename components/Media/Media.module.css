@@ -10,8 +10,20 @@
   text-align: left;
 }
 
+.titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .marginBtm {
   margin-bottom: 2rem;
+}
+
+.icon {
+  width: 1.4rem;
+  transform: translateY(-3px);
+  color: rgb(219, 219, 183);
 }
 
 .plot {
@@ -38,4 +50,10 @@
 
 .label {
   color: #cac4ce;
+}
+
+@media screen and (max-width: 720px) {
+  .meta {
+    width: 84%;
+  }
 }

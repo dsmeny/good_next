@@ -30,10 +30,10 @@ const MediaDetail = (props) => {
           <p>
             <strong style={styles}>Release Date: </strong> {data.Released}
           </p>
-          <p>
+          <p style={{ lineHeight: "1.5rem" }}>
             <strong style={styles}>Actors: </strong> {data.Actors}
           </p>
-          <p>
+          <p style={{ lineHeight: "1.5rem" }}>
             <strong style={styles}>Plot: </strong> {data.Plot}
           </p>
           <p>

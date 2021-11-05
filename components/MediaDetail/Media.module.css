@@ -14,6 +14,13 @@
   margin-top: 1rem;
   line-height: 1rem;
   text-align: left;
+  transform: translate(0, -9rem);
+}
+
+@media screen and (min-width: 870px) {
+  .details {
+    transform: translate(-9rem, 0);
+  }
 }
 
 .title {
