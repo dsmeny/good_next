@@ -25,3 +25,18 @@
   justify-content: center;
   width: 100%;
 }
+
+@media screen and (max-width: 720px) {
+  .home input {
+    width: 65vw;
+  }
+  .home form {
+    flex-direction: column;
+  }
+
+  .home button {
+    width: 31vw;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+}
