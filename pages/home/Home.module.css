@@ -1,12 +1,9 @@
-.container {
-  height: 100vh;
-}
-.container h3 {
+.home h1 {
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.container input {
+.home input {
   border-radius: 10rem;
   line-height: 2.5rem;
   width: 39vw;
@@ -14,10 +11,10 @@
   padding-left: 1rem;
 }
 
-.container button {
+.home button {
   border-radius: 10rem;
   line-height: 2.5rem;
-  width: 15vw;
+  width: 7vw;
   font-weight: 500;
   background-color: antiquewhite;
   margin-bottom: 2rem;

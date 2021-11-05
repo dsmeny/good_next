@@ -10,8 +10,8 @@ const Home = (props) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <h3>Find what&apos;s good!</h3>
+    <div className={styles.home}>
+      <h1>What&apos;s good ??</h1>
       <form
         id="form2"
         method="GET"
