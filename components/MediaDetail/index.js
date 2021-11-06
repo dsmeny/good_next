@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import classes from "./Media.module.css";
+import classes from "./MediaDetail.module.css";
 
 const MediaDetail = (props) => {
   const data = JSON.parse(props.data);
@@ -31,7 +31,13 @@ const MediaDetail = (props) => {
             <strong style={styles}>Release Date: </strong> {data.Released}
           </p>
           <p style={{ lineHeight: "1.5rem" }}>
+            <strong style={styles}>Director: </strong> {data.Director}
+          </p>
+          <p style={{ lineHeight: "1.5rem" }}>
             <strong style={styles}>Actors: </strong> {data.Actors}
+          </p>
+          <p style={{ lineHeight: "1.5rem" }}>
+            <strong style={styles}>Writer: </strong> {data.Writer}
           </p>
           <p style={{ lineHeight: "1.5rem" }}>
             <strong style={styles}>Plot: </strong> {data.Plot}
@@ -40,6 +46,14 @@ const MediaDetail = (props) => {
             <strong style={styles}>Runtime: </strong>
             {data.Runtime}
           </p>
+        </div>
+        <div className={classes.details}>
+          <h1>Ratings</h1>
+          {data.Ratings.map((Rating, index) => (
+            <p key={index}>
+              <strong style={styles}>{Rating.Source}</strong>: {Rating.Value}
+            </p>
+          ))}
         </div>
       </section>
     </div>
