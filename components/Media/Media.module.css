@@ -35,7 +35,11 @@
   text-align: center;
 }
 
-.container img {
+.poster {
+  background-color: black;
+}
+
+.poster img {
   width: 100%;
   max-width: 350px;
   height: auto;

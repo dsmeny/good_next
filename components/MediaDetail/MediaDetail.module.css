@@ -1,25 +1,26 @@
 .container {
   display: flex;
-  justify-content: space-evenly;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.poster {
-  margin-right: 1rem;
-}
-
-.details {
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
   color: white;
   margin-top: 1rem;
   line-height: 1rem;
   text-align: left;
-  transform: translate(0, -9rem);
+  padding: 1rem;
 }
 
-@media screen and (min-width: 870px) {
-  .details {
-    transform: translate(-9rem, 0);
+.container div {
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 950px) {
+  .container {
+    flex-direction: row;
+    padding: 0;
+  }
+  .container div {
+    margin: 0 2rem;
   }
 }
 
@@ -30,10 +31,11 @@
   width: 53.5 rem;
 }
 
-.title h2 {
+.title span {
   color: var(--overhang-color);
+  font-size: 1.4rem;
 }
 
-.details p {
+.container div p {
   color: rgb(219, 219, 183);
 }

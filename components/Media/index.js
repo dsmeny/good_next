@@ -13,11 +13,13 @@ const Media = (props) => {
 
   return (
     <div className={classes.container}>
-      <img
-        src={data.Poster}
-        alt={data.Title}
-        onClick={() => router.push(`/${Title}?type=${props.type}`)}
-      />
+      <div className={classes.poster}>
+        <img
+          src={data.Poster}
+          alt={data.Title}
+          onClick={() => router.push(`/${Title}?type=${props.type}`)}
+        />
+      </div>
       <div className={classes.details}>
         <div className={classes.titles}>
           <h2
