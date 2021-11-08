@@ -28,10 +28,10 @@ export default async function handler(req, res) {
           ["rpush", `${id}`, data.imdbID, data.Title],
         ])
         .exec();
-    } else if (title === name) {
+    } else if (title.includes(name)) {
       await client
         .pipeline([
-          ["sadd", `${type}`, name.toLowerCase()],
+          ["sadd", `${type}`, title],
           ["lpush", `${title}`, JSON.stringify(data)],
           ["rpush", `${title}`, data.imdbID, data.Title],
         ])
