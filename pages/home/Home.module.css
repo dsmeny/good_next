@@ -26,6 +26,15 @@
   width: 100%;
 }
 
+.prevSelection {
+  margin-top: 7rem;
+}
+
+.prevSelection h1 {
+  text-align: left;
+  margin-bottom: 5rem;
+}
+
 @media screen and (max-width: 720px) {
   .home input {
     width: 65vw;

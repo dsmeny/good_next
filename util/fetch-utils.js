@@ -1,5 +1,4 @@
 export const postData = (inputFieldValue, setState, type) => {
-  console.log("fetch-util: ", inputFieldValue, setState, type);
   fetch("/api/api_routes", {
     method: "post",
     headers: {

@@ -1,10 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Media from "../../components/Media";
 import styles from "./Home.module.css";
 import Notify from "../../components/Notify";
 import postHandler from "../../util/fetch-utils";
 
 const Home = (props) => {
+  const [members, setMembers] = useState([]);
+  useEffect(() => {
+    fetch("/api/api_routes_home")
+      .then((response) => response.json())
+      .then((data) => {
+        data.payload.forEach((member) => {
+          setMembers((prev) => {
+            return [...prev, member];
+          });
+        });
+      });
+  }, []);
+
   return (
     <div className={styles.home}>
       <h1>What&apos;s good ??</h1>
@@ -23,6 +36,20 @@ const Home = (props) => {
           {props.state && <Media data={props.state} type={"t"} />}
         </section>
       )}
+      <div className={styles.prevSelection}>
+        {members && (
+          <div>
+            <h1>Previous Selections</h1>
+          </div>
+        )}
+        {members && (
+          <section>
+            {members.map((member, index) => (
+              <Media data={member} type={"t"} key={index} />
+            ))}
+          </section>
+        )}
+      </div>
     </div>
   );
 };

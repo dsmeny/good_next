@@ -5,8 +5,6 @@ import Details from "../icons/Details";
 const Media = (props) => {
   let data = JSON.parse(props.data);
 
-  console.log("data media: ", data);
-
   if (typeof data === "string") {
     data = JSON.parse(data);
   }
