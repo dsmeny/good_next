@@ -6,7 +6,7 @@ export const postData = (inputFieldValue, setState, type) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: inputFieldValue.trim(),
+      name: inputFieldValue.trim().toLowerCase(),
       type: type,
     }),
   })
