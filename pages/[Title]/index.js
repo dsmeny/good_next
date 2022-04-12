@@ -8,8 +8,6 @@ const Details = () => {
   const query = router.query.Title;
   const type = router.query.type;
 
-  console.log("media details page query: ", query);
-
   const styles = {
     height: "100vh",
   };

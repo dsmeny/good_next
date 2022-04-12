@@ -6,7 +6,6 @@ const MediaDetail = (props) => {
 
   const router = useRouter();
 
-  console.log("Media Detail data: ", data);
   const Title = data.Title.toLowerCase();
 
   const styles = {

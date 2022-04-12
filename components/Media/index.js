@@ -9,6 +9,8 @@ const Media = (props) => {
     data = JSON.parse(data);
   }
   const router = useRouter();
+  console.log("Media props", props);
+
   const Title = props.type === "i" ? data.imdbID : data.Title.toLowerCase();
 
   return (

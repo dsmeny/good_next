@@ -6,17 +6,19 @@ import postHandler from "../../util/fetch-utils";
 
 const Home = (props) => {
   const [members, setMembers] = useState([]);
+
   useEffect(() => {
-    fetch("/api/api_routes_home")
-      .then((response) => response.json())
-      .then((data) => {
-        data.payload.forEach((member) => {
+    if (props.state) {
+      fetch("/api/api_routes_home")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Home setMembers data: ", data);
           setMembers((prev) => {
-            return [...prev, member];
+            return [...prev, JSON.stringify(data.payload)];
           });
         });
-      });
-  }, []);
+    }
+  }, [props.state]);
 
   return (
     <div className={styles.home}>
@@ -37,12 +39,12 @@ const Home = (props) => {
         </section>
       )}
       <div className={styles.prevSelection}>
-        {members && (
+        {
           <div>
             <h1>Previous Selections</h1>
           </div>
-        )}
-        {members && (
+        }
+        {members.length > 0 && (
           <section>
             {members.map((member, index) => (
               <Media data={member} type={"t"} key={index} />
