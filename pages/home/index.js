@@ -12,7 +12,6 @@ const Home = (props) => {
       fetch("/api/api_routes_home")
         .then((response) => response.json())
         .then((data) => {
-          console.log("Home setMembers data: ", data);
           setMembers((prev) => {
             return [...prev, JSON.stringify(data.payload)];
           });
